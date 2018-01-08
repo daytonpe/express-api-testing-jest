@@ -4,7 +4,7 @@ import startCore from '../../startCore';
 
 let app, server; //similar to var
 
-beforeAll(async () => { //before anything else run startCore on app
+beforeAll(async () => { //before anything else run startCore to start app
   app = express();
   server = await startCore(app);
 });
@@ -111,6 +111,6 @@ describe('Integration: DELETE / delete a user.', () => {
       .del(`/users/${testUser._id}`)
       .send()
       expect(result.status).toEqual(200);
-      console.log(result.body)
+      // console.log(result.body)
     });
 });
