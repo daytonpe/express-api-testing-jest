@@ -1,8 +1,11 @@
-var express = require('express');
-var app = express();
+
+// FROM DEVICE-COMMAND-API
+import express from 'express';
+import startCore from './startCore';
+// import logger from './lib/utils/logger';
 var db = require('./db');
 
-var UserController = require('./user/UserController');
-app.use('/users', UserController);
+const app = express()
 
-module.exports = app;
+startCore(app)
+  // .catch(err => logger.error(err));

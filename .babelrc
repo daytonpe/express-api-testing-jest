@@ -1,0 +1,16 @@
+{
+  "sourceMaps": "inline",
+  "plugins": [
+    "transform-es2015-modules-commonjs",
+    "transform-strict-mode",
+    "transform-es2015-destructuring",
+    "transform-es2015-parameters",
+    "transform-es2015-arrow-functions",
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ]
+  ]
+}

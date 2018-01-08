@@ -1,0 +1,6 @@
+{
+  "extends": "parkhub-base",
+  "env": {
+    "jest/globals": true
+  }
+}

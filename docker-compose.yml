@@ -1,0 +1,19 @@
+version: '3'
+services:
+  test-api:
+    build:
+      context: .
+    command: npm run start-dev
+    volumes:
+      - ./:/home/app
+      - /home/app/node_modules
+    ports:
+      - "8080:8080"
+    links:
+      - testdb:mongo
+    depends_on:
+      - testdb
+  testdb:
+    image: mongo
+    ports:
+      - "27017:27017"
