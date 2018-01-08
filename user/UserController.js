@@ -7,6 +7,8 @@ var User = require('./User');
 
 // CREATES A NEW USER
 router.post('/', function (req, res) {
+    
+    // console.log(req.body)
     User.create({
             name : req.body.name,
             email : req.body.email,
@@ -14,6 +16,7 @@ router.post('/', function (req, res) {
         }, 
         function (err, user) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
+            // console.log(user)
             res.status(200).send(user);
         });
     console.log('create user done.')
@@ -23,8 +26,6 @@ router.post('/', function (req, res) {
 // RETURNS ALL THE USERS IN THE DATABASE
 router.get('/', function (req, res) {
     console.log('return all users called')
-    // console.log(req.body)
-    // console.log(res)
     User.find({}, function (err, users) {
         if (err) return res.status(500).send("There was a problem finding the users.");
         res.status(200).send(users);
